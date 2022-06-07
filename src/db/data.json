@@ -87,6 +87,13 @@
       "kor": "사과",
       "isDone": false,
       "id": 12
+    },
+    {
+      "day": "4",
+      "eng": "window",
+      "kor": "창문",
+      "isDone": false,
+      "id": 13
     }
   ]
 }

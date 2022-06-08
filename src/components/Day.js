@@ -9,7 +9,7 @@ export default function Day() {
     return (
         <>
             <h2>Day {day}</h2>
-            {words.length ? 
+            {words ? 
             <table>
                 <tbody>
                     {words.map(word => (

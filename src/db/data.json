@@ -15,6 +15,14 @@
     {
       "day": 4,
       "id": 4
+    },
+    {
+      "day": 5,
+      "id": 5
+    },
+    {
+      "day": 6,
+      "id": 6
     }
   ],
   "words": [
@@ -71,7 +79,7 @@
       "day": "4",
       "eng": "monkey",
       "kor": "원숭이",
-      "isDone": false,
+      "isDone": true,
       "id": 10
     },
     {
@@ -94,6 +102,13 @@
       "kor": "창문",
       "isDone": false,
       "id": 13
+    },
+    {
+      "day": "5",
+      "eng": "dumb",
+      "kor": "멍청한",
+      "isDone": true,
+      "id": 14
     }
   ]
 }

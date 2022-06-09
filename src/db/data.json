@@ -19,10 +19,6 @@
     {
       "day": 5,
       "id": 5
-    },
-    {
-      "day": 6,
-      "id": 6
     }
   ],
   "words": [
@@ -60,13 +56,6 @@
       "kor": "창문",
       "isDone": false,
       "id": 7
-    },
-    {
-      "day": "3",
-      "eng": "house",
-      "kor": "집",
-      "isDone": false,
-      "id": 8
     },
     {
       "day": "2",
@@ -109,6 +98,13 @@
       "kor": "멍청한",
       "isDone": true,
       "id": 14
+    },
+    {
+      "day": "1",
+      "eng": "smart",
+      "kor": "똑똑한",
+      "isDone": false,
+      "id": 15
     }
   ]
 }

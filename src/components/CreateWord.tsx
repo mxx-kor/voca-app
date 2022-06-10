@@ -1,41 +1,49 @@
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
+import { IDay } from "./Daylist";
 
 export default function CreateWord() {
-    const days = useFetch('http://localhost:3001/days');
+    const days: IDay[] = useFetch('http://localhost:3001/days');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate()
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
         setIsLoading(!isLoading);
-        fetch(`http://localhost:3001/words/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json', 
-            },
-            body: JSON.stringify({
-                day: dayRef.current.value,
-                eng: engRef.current.value,
-                kor: korRef.current.value,
-                isDone : false
+
+        if (dayRef.current && engRef.current && korRef.current) {
+
+            const day = dayRef.current.value;
+            const eng = engRef.current.value;
+            const kor = korRef.current.value;
+
+            fetch(`http://localhost:3001/words/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json', 
+                },
+                body: JSON.stringify({
+                    day,
+                    eng,
+                    kor,
+                    isDone : false
+                })
             })
-        })
-        .then(res => {
-            if(res.ok) {
-                alert("생성이 완료되었습니다.");
-                navigate(`/day/${dayRef.current.value}`);
-                setIsLoading(!isLoading);
-            }
-        })
+            .then(res => {
+                if(res.ok) {
+                    alert("생성이 완료되었습니다.");
+                    navigate(`/day/${day}`);
+                    setIsLoading(!isLoading);
+                }
+            });
+        }
         
     }
 
-    const engRef = useRef(null);
-    const korRef = useRef(null);
-    const dayRef = useRef(null);
+    const engRef = useRef<HTMLInputElement>(null);
+    const korRef = useRef<HTMLInputElement>(null);
+    const dayRef = useRef<HTMLSelectElement>(null);
 
 
     return (

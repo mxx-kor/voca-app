@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# 리액트와 타입스크립트를 활용한 단어장 웹앱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### 개발 목표
 
-In the project directory, you can run:
+> Json 파일을 직접 Post, Delete하여 단어장 기능을 구현
 
-### `npm start`
+### 사용 기술
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- TypeScript
+- Json-Server
+- Personal hook
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### 프리뷰
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/82329983/173175866-ecbcf9c2-8475-4786-95a9-19e03e911dab.png)
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/82329983/173175874-509b5a16-de02-4e9e-8770-324a36b39d51.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://user-images.githubusercontent.com/82329983/173175881-05b89d51-fa5b-4e0e-87e0-afabf1f23b8b.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 주요 기능
 
-### `npm run eject`
+> Day, Word 생성, 삭제
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - json-server를 이용해 json파일에 새로운 Day를 추가하는 기능, 가장 최근 Day를 삭제하는 기능
+    - 반복적인 json-server fetch를 custom hook으로 만들어 사용함.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> 외운 단어, 뜻 보이기
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    - 단어 생성시 json파일에 isDone을 false를 기본값으로 설정, 체크박스 체크시 true로 값 변경 후 어둡게 처리.
+    - state를 이용하여 뜻을 가리거나 보이기 기능 구현
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 마이그레이션
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> 모든 애플리케이션의 기능을 완성한 후 타입스크립트로 마이그레이션하는 경험을 위해 시도함.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    - 타입을 설정해줌으로써 조금 더 엄격하지만 오류로부터 자유로운 웹앱 구현이 가능했다.
+    - 구현 초기부터 타입스크립트를 사용하여 로직 변경없이 구현하는 것이 더 자유로울것이라고 생각했다.
+    - 기초 로직의 변경없이 수정이 가능했고 오류들을 해결하며 모든 컴포넌트들을 타입스크립트로 바꾸는 것에 성공하였다.

@@ -7,8 +7,7 @@ export default function DeleteDay () {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate()
 
-    const del = (e) => {
-        e.preventDefault();
+    const del = () => {
         setIsLoading(!isLoading);
 
         if(window.confirm('최근 Day를 삭제하시겠습니까?')) {
@@ -25,14 +24,14 @@ export default function DeleteDay () {
     }
 
     return (
-        <form onSubmit={del}>
+        <>
             <h3>현재 일수 : {days.length}</h3>
             <p>삭제 버튼을 누르면 Day {days.length}가 삭제됩니다. 단어가 저장되어있다면 Day추가시 그대로 내용이 보입니다.</p>
-            <button className="btn_del" style={{
+            <button onClick={del} className="btn_del" style={{
                 opacity: isLoading ? 0.3 : 1,
             }}>
                 {isLoading ? "Deleting..." : "Day 삭제"}
             </button>
-        </form>
+        </>
     )
 }
